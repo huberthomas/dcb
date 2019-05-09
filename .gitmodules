@@ -1,6 +1,3 @@
-[submodule "caffe"]
-	path = caffe
-	url = https://github.com/BVLC/caffe.git
 [submodule "CED"]
 	path = CED
 	url = https://github.com/Wangyupei/CED.git
