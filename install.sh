@@ -1,6 +1,6 @@
 #!/bin/bash
 echo 'Copy files from CED to caffe'
-cp -r ced/examples/CED/ caffe/examples/
+cp -r ced/examples/ced/ caffe/examples/
 cp -r ced/include/ caffe/
 cp -r ced/src/ caffe/
 

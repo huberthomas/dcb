@@ -2,8 +2,7 @@
 
 ## Prerequisites
 
-[Building Nvidia Digits](https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildDigits.md)
-[Building Caffe](https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildCaffe.md)
+The following subsections are a summary of the instructions from [Building Nvidia Digits](https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildDigits.md) and [Building Caffe](https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildCaffe.md).
 
 ### Install repo packages
     CUDA_REPO_PKG=http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
@@ -55,6 +54,7 @@
 
 3. Build [Caffe](https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildCaffe.md)
 
+    sudo apt install cmake-curses-gui
     cd caffe
     pip install --upgrade pip --user
     sudo pip install -r python/requirements.txt
@@ -66,4 +66,9 @@
 
 ## Acknowledgements
 
-Thanks to NVIDA for their support.
+Big thanks to...
+
+Caffe for their great [work](https://caffe.berkeleyvision.org/).
+NVIDA for their great [descriptions](https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildDigits.md).
+the team around [HED](https://github.com/s9xie/hed).
+the team around [CED](https://github.com/Wangyupei/CED).
