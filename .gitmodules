@@ -1,6 +1,6 @@
-[submodule "CED"]
-	path = CED
-	url = https://github.com/Wangyupei/CED.git
 [submodule "caffe"]
 	path = caffe
 	url = https://github.com/NVIDIA/caffe.git
+[submodule "ced"]
+	path = ced
+	url = git@github.com:huberthomas/ced.git
