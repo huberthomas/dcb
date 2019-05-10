@@ -1,6 +1,49 @@
 # Deep Crisp Boundaries
 
-## Linux Installation
+## Prerequisites
+
+[Building Nvidia Digits](https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildDigits.md)
+[Building Caffe](https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildCaffe.md)
+
+### Install repo packages
+    CUDA_REPO_PKG=http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+    ML_REPO_PKG=http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/nvidia-machine-learning-repo-ubuntu1604_1.0.0-1_amd64.deb
+
+    wget "$CUDA_REPO_PKG" -O /tmp/cuda-repo.deb && sudo dpkg -i /tmp/cuda-repo.deb && rm -f /tmp/cuda-repo.deb
+    wget "$ML_REPO_PKG" -O /tmp/ml-repo.deb && sudo dpkg -i /tmp/ml-repo.deb && rm -f /tmp/ml-repo.deb
+
+    sudo apt-get update
+
+### Download new list of packages
+    sudo apt-get install --no-install-recommends git graphviz python-dev python-flask python-flaskext.wtf python-gevent python-h5py python-numpy python-pil python-pip python-scipy python-tk
+
+    sudo apt-get install --no-install-recommends build-essential cmake git gfortran libatlas-base-dev libboost-filesystem-dev libboost-python-dev libboost-system-dev libboost-thread-dev libgflags-dev libgoogle-glog-dev libhdf5-serial-dev libleveldb-dev liblmdb-dev libopencv-dev libsnappy-dev python-all-dev python-dev python-h5py python-matplotlib python-numpy python-opencv python-pil python-pip python-pydot python-scipy python-skimage python-sklearn
+
+### Building Protobuf 3.2.1
+
+[Reference](https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildProtobuf.md)
+
+    sudo apt-get install autoconf automake libtool curl make g++ git python-dev python-setuptools unzip
+
+    git clone https://github.com/google/protobuf.git -b v3.2.1
+
+    ./autogen.sh
+    ./configure
+    make "-j$(nproc)"
+    sudo make install
+    sudo ldconfig
+    cd python
+    sudo python setup.py install --cpp_implementation
+
+### Cuda
+
+    # Select one repository from http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/
+    wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_9.0.176-1_amd64.deb
+
+    sudo apt update
+    sudo apt install cuda-9-0
+
+## Ubuntu 16.04 Installation
 
 1. Clone repository
 
@@ -10,10 +53,17 @@
 
     bash install.sh
 
-3. Build [caffe](https://caffe.berkeleyvision.org/install_apt.html)
+3. Build [Caffe](https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildCaffe.md)
 
     cd caffe
+    pip install --upgrade pip --user
+    sudo pip install -r python/requirements.txt
     mkdir build
     cd build
     ccmake ..
+    make -j"$(nproc)"
+    make install
 
+## Acknowledgements
+
+Thanks to NVIDA for their support.

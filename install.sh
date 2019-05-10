@@ -1,8 +1,8 @@
 #!/bin/bash
 echo 'Copy files from CED to caffe'
 cp -r CED/examples/CED/ caffe/examples/
-cp -r CED/include/ caffe/include/
-cp -r CED/src/ caffe/src/
+cp -r CED/include/ caffe/
+cp -r CED/src/ caffe/
 
 echo 'Copy pretrained HED model'
 if [ ! -e model ]; then
