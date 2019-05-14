@@ -62,7 +62,25 @@ The following subsections are a summary of the instructions from [Building Nvidi
     cd build
     ccmake ..
     make -j"$(nproc)"
+    make runtest
+    make pytest
     make install
+
+## Training
+
+Download the [BSDS500 dataset](http://vcl.ucsd.edu/hed/HED-BSDS.tar) and extract it to the data directory.
+
+    cd caffe/examples/ced
+
+    Put the [pretrained HED model](https://drive.google.com/file/d/1R_kUd028OMWnPSRNBJTEkUQDrYOoSP7P/view?usp=sharing) in the caffe/examples/ced directory.
+    Modify train_val.protoxt (entry root_folder and source) to your data directory path. 
+
+    python solve.py -h
+
+## Testing
+
+    cd caffe/examples/ced
+    python forward_all.py -h
 
 ## Acknowledgements
 
