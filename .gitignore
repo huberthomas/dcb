@@ -1,4 +1,2 @@
-caffe/build
-CED/build
-model
 .vscode
+data/*
