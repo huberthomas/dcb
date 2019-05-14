@@ -4,3 +4,6 @@
 [submodule "ced"]
 	path = ced
 	url = git@github.com:huberthomas/ced.git
+[submodule "hed"]
+	path = hed
+	url = git@github.com:huberthomas/hed.git
