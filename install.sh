@@ -8,5 +8,8 @@ cp -r hed/examples/hed/ caffe/examples/
 cp -r hed/include/caffe/ caffe/include/
 cp -r hed/src/caffe/ caffe/src/
 
+wget http://vcl.ucsd.edu/hed/hed_pretrained_bsds.caffemodel
+mv hed_pretrained_bsds.caffemodel caffe/examples/hed
+
 echo 'Now download pretrained HED model hed_vgg16.caffemodel from https://drive.google.com/file/d/1R_kUd028OMWnPSRNBJTEkUQDrYOoSP7P/view?usp=sharing and put it to caffe/examples/hed'
 echo 'Finished'
