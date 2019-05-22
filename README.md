@@ -90,3 +90,14 @@ Caffe for their great [work](https://caffe.berkeleyvision.org/).
 NVIDA for their great [descriptions](https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildDigits.md).
 the team around [HED](https://github.com/s9xie/hed).
 the team around [CED](https://github.com/Wangyupei/CED).
+
+
+## Jupyter
+
+sudo apt-get update
+sudo apt-get -y install python-pip python-dev
+sudo -H pip install --upgrade pip
+sudo apt-get -y install ipython ipython-notebook
+sudo -H pip install jupyter
+
+jupyter notebook  xyz.ipynb
