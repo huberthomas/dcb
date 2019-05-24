@@ -66,6 +66,15 @@ The following subsections are a summary of the instructions from [Building Nvidi
     make pytest
     make install
 
+## MatCaffe
+
+    Build caffe than
+    sudo ln caffe/build/lib/libcaffe-nv.so /usr/local/lib/libcaffe.so
+    sudo ldconfig
+
+    Rebuild Caffe by setting Matlab_DIR to /usr/local/MATLAB/R2018a. But keep in mind that because of Matlab you have to use gcc/g++ 6.3 compiler.
+    
+
 ## Training
 
 Download the [BSDS500 dataset](http://vcl.ucsd.edu/hed/HED-BSDS.tar) and extract it to the data directory.
@@ -82,6 +91,18 @@ Download the [BSDS500 dataset](http://vcl.ucsd.edu/hed/HED-BSDS.tar) and extract
     cd caffe/examples/ced
     python forward_all.py -h
 
+## Hints
+
+### Jupyter
+
+sudo apt-get update
+sudo apt-get -y install python-pip python-dev
+sudo -H pip install --upgrade pip
+sudo apt-get -y install ipython ipython-notebook
+sudo -H pip install jupyter
+
+jupyter notebook  xyz.ipynb
+
 ## Acknowledgements
 
 Big thanks to...
@@ -91,13 +112,3 @@ NVIDA for their great [descriptions](https://github.com/NVIDIA/DIGITS/blob/maste
 the team around [HED](https://github.com/s9xie/hed).
 the team around [CED](https://github.com/Wangyupei/CED).
 
-
-## Jupyter
-
-sudo apt-get update
-sudo apt-get -y install python-pip python-dev
-sudo -H pip install --upgrade pip
-sudo apt-get -y install ipython ipython-notebook
-sudo -H pip install jupyter
-
-jupyter notebook  xyz.ipynb
